@@ -1,8 +1,6 @@
 package br.edu.univas.vo;
 
-/**
- * Uma classe usada para representar um único dominó.
- */
+//Uma classe usada para representar um único dominó.
 
 public class Domino implements Comparable<Domino> {
 

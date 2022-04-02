@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Uma classe usada para representar um pacote de dominós
- */
+//Uma classe usada para representar um pacote de dominós
 
 public class Pack {
 

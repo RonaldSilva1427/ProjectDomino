@@ -1,7 +1,5 @@
 package br.edu.univas.main;
-
 import br.edu.univas.vo.Player;
-
 import java.util.Scanner;
 
 //Uma interface de texto que é usada para jogar um jogo de dominó.
@@ -11,16 +9,14 @@ public class InterfaceTexto implements InterfaceDados {
 
     private Scanner input; // Usado para obter entrada do usuário.
 
-    /**
-     * Construtor padrão
-     */
+     //Construtor padrão
     public InterfaceTexto() {
         this.input = new Scanner(System.in);
     }
 
     @Override
     public int packSize() {
-        /*Qual pacote de dominó deve ser criado? 6 ou 9?*/
+        //Qual pacote de dominó deve ser criado? 6 ou 9?
         System.out.println("Qual pacote você gostaria? \"6\" ou \"9\"?");
         return input.nextInt();
     }

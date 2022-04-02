@@ -3,10 +3,7 @@ package br.edu.univas.vo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A classe é usada para representar um jogador de dominó.
- */
-
+//A classe é usada para representar um jogador de dominó.
 
 public class Player {
 

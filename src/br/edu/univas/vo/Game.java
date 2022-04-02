@@ -1,14 +1,10 @@
 package br.edu.univas.vo;
 
 import br.edu.univas.main.InterfaceDados;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Aula usada para jogar dominó.
- */
-
+//Aula usada para jogar dominó.
 
 public class Game {
 

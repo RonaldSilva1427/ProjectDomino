@@ -3,43 +3,36 @@ package br.edu.univas.vo;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Board {
+
     private List<Domino> dominos;  // O tabuleiro contém um conjunto de dominós
     private int topSide, botSide;  // O tabuleiro tem dois lados jogáveis
 
-    /**
-     * Cria um tabuleiro vazio.
-     */
+    //Cria um tabuleiro vazio.
+
     public Board() {
 
-        /* Faz uma lista vazia para guardar todos os dominós do tabuleiro */
+        //Faz uma lista vazia para guardar todos os dominós do tabuleiro
         this.dominos = new LinkedList<Domino>();
 
     }
 
-    /**
-     * Obtém a lista de todos os dominós no tabuleiro.
-     *
-     * @return uma lista de todos os dominós no tabuleiro.
-     */
+     //Obtém a lista de todos os dominós no tabuleiro.
+     //@return uma lista de todos os dominós no tabuleiro.
+
     public List<Domino> getDominos() {
         return dominos;
     }
 
-    /**
-     * Retorna o número do lado jogável superior do tabuleiro.
-     * <p>
-     * Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado mais jogável
-     * seria 6.
-     * <p>
-     * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
-     *
-     * @return o número do lado superior.
-     */
+
+     //Retorna o número do lado jogável superior do tabuleiro.
+     //Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado mais jogável seria 6.
+     //NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     //@return o número do lado superior.
+
     public int getTopSide() {
 
-        /* If the board isn't empty, return the value */
+        //Se o quadro não estiver vazio, retorna o valor
         if (!isEmpty()) {
             return topSide;
         } else {
@@ -47,19 +40,14 @@ public class Board {
         }
     }
 
-    /**
-     * Retorna o número do lado jogável do bot para o tabuleiro.
-     * <p>
-     * Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado jogável do bot
-     * seria 4.
-     * <p>
-     * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
-     *
-     * @return o número do lado do bot.
-     */
+     //Retorna o número do lado jogável do bot para o tabuleiro.
+     //Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado jogável do bot seria 4.
+     //NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     //@return o número do lado do bot.
+
     public int getBotSide() {
 
-        /* If the board isn't empty, return the value */
+        //Se o quadro não estiver vazio, retorna o valor
         if (!isEmpty()) {
             return botSide;
         } else {
@@ -67,45 +55,38 @@ public class Board {
         }
     }
 
-    /**
-     * Determina se o tabuleiro está vazio ou não.
-     *
-     * @return true se o quadro estiver vazio.
-     */
+
+     //Determina se o tabuleiro está vazio ou não.
+     //@return true se o quadro estiver vazio.
+
     public boolean isEmpty() {
         return this.dominos.isEmpty();
 
     }
 
-    /**
-     * Retorna o número de dominós atualmente no tabuleiro.
-     *
-     * @return o número de dominós atualmente no tabuleiro.
-     */
+     //Retorna o número de dominós atualmente no tabuleiro.
+     //@return o número de dominós atualmente no tabuleiro.
+
     public int numDomBoard() {
         return dominos.size();
     }
 
-    /**
-     * Adicione um dominó ao topo do tabuleiro.
-     * <p>
-     * O usuário deste método deve especificar qual lado do dominó deve
-     * ser conectado à placa.
-     *
-     * @param addDom o dominó a ser adicionado ao quadro.
-     * @param side1  true se side1 do dominó adicionado for o lado
-     *               que corresponde à placa.
-     */
+
+     //Adicione um dominó ao topo do tabuleiro.
+
+     //O usuário deste método deve especificar qual lado do dominó deve ser conectado à placa.
+     //@param addDom o dominó a ser adicionado ao quadro.
+     //@param side1  true se side1 do dominó adicionado for o lado que corresponde à placa.
+
     public void addDominoTop(Domino addedDom, boolean side1) {
 
-        /* Adiciona ao início da lista */
+        //Adiciona ao início da lista
         dominos.add(0, addedDom);
 
-        /* Se side1 for verdadeiro, isso significa que side1 é aquele que correspondeu,
-         * portanto, lado2 se torna o próximo lado disponível no tabuleiro. */
+        //Se side1 for verdadeiro, isso significa que side1 é aquele que correspondeu,portanto, lado2 se torna o próximo lado disponível no tabuleiro.
         if (side1) {
 
-            /* Tem que virar o dominó b/c você está adicionando side1 ao topo */
+            //Tem que virar o dominó b/c você está adicionando side1 ao topo
             addedDom.flipDom();
             topSide = addedDom.getSide2();
         } else {
