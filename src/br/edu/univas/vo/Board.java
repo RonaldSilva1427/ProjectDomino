@@ -3,38 +3,41 @@ package br.edu.univas.vo;
 import java.util.LinkedList;
 import java.util.List;
 
+
+/**
+ * Classe utilizada para representar o tabuleiro em que os dominós são colocados.
+ */
+
 public class Board {
-    private List<Domino> dominos;  // The board contains a set of dominoes
-    private int topSide, botSide; // The board has two playable sides
+    private List<Domino> dominos;  // O tabuleiro contém um conjunto de dominós
+    private int topSide, botSide;  // O tabuleiro tem dois lados jogáveis
 
     /**
-     * Creates an empty board.
+     * Cria um tabuleiro vazio.
      */
     public Board() {
 
-        /* Make an empty list to store all the dominoes on the board */
+        /* Faz uma lista vazia para guardar todos os dominós do tabuleiro */
         this.dominos = new LinkedList<Domino>();
 
     }
 
     /**
-     * Gets the list of all the dominoes on the board.
-     *
-     * @return a list of all the dominoes on the board.
+     * Obtém a lista de todos os dominós no tabuleiro.
+     * @return uma lista de todos os dominós no tabuleiro.
      */
     public List<Domino> getDominos() {
         return dominos;
     }
 
     /**
-     * Returns the number of the top playable side for the board.
+     * Retorna o número do lado jogável superior do tabuleiro.
      * <p>
-     * E.g. If the board looks like this [6 | 6][5 | 4] the top playable side
-     * would be 6.
+     * Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado mais jogável
+     * seria 6.
      * <p>
-     * N.B. An empty board will return negative values for it's top and bot sides.
-     *
-     * @return the number for the top side.
+     * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     * @return o número do lado superior.
      */
     public int getTopSide() {
 
@@ -47,14 +50,13 @@ public class Board {
     }
 
     /**
-     * Returns the number of the bot playable side for the board.
+     * Retorna o número do lado jogável do bot para o tabuleiro.
      * <p>
-     * E.g. If the board looks like this [6 | 6][5 | 4] the bot playable side
-     * would be 4.
+     * Por exemplo, se a placa se parece com isso [6 | 6][5 | 4] o lado jogável do bot
+     * seria 4.
      * <p>
-     * N.B. An empty board will return negative values for it's top and bot sides.
-     *
-     * @return the number for the bot side.
+     * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     * @return o número do lado do bot.
      */
     public int getBotSide() {
 
@@ -67,9 +69,8 @@ public class Board {
     }
 
     /**
-     * Determines if the board is empty or not.
-     *
-     * @return true if the board is empty.
+     * Determina se o tabuleiro está vazio ou não.
+     * @return true se o quadro estiver vazio.
      */
     public boolean isEmpty() {
         return this.dominos.isEmpty();
@@ -77,34 +78,32 @@ public class Board {
     }
 
     /**
-     * Returns the number of dominos currently on the board.
-     *
-     * @return the number of dominos currently on the board.
+     * Retorna o número de dominós atualmente no tabuleiro.
+     * @return o número de dominós atualmente no tabuleiro.
      */
     public int numDomBoard() {
         return dominos.size();
     }
 
     /**
-     * Add a domino to the top of the board.
+     * Adicione um dominó ao topo do tabuleiro.
      * <p>
-     * The user of this method must specify which side of the domino should
-     * be connected to the board.
-     *
-     * @param addedDom the domino to be added to the board.
-     * @param side1    true if side1 of the added domino is the side
-     *                 that matches the board.
+     * O usuário deste método deve especificar qual lado do dominó deve
+     * ser conectado à placa.
+     * @param addDom o dominó a ser adicionado ao quadro.
+     * @param side1 true se side1 do dominó adicionado for o lado
+     * que corresponde à placa.
      */
     public void addDominoTop(Domino addedDom, boolean side1) {
 
-        /* Add to the start of the list */
+        /* Adiciona ao início da lista */
         dominos.add(0, addedDom);
 
-        /* If side1 is true, that means side1 is the one that matched,
-         * therefore, side2 becomes the next available side on the board. */
+        /* Se side1 for verdadeiro, isso significa que side1 é aquele que correspondeu,
+         * portanto, lado2 se torna o próximo lado disponível no tabuleiro. */
         if (side1) {
 
-            /* Have to flip the domino b/c you're adding side1 to the top */
+            /* Tem que virar o dominó b/c você está adicionando side1 ao topo */
             addedDom.flipDom();
             topSide = addedDom.getSide2();
         } else {
@@ -114,27 +113,26 @@ public class Board {
     }
 
     /**
-     * Add a domino to the bot of the board.
+     * Adicione um dominó ao bot do tabuleiro.
      * <p>
-     * The user of this method must specify which side of the domino should
-     * be connected to the board.
-     *
-     * @param addedDom the domino to be added to the board.
-     * @param side1    true if side1 of the added domino is the side
-     *                 that matches the board.
+     * O usuário deste método deve especificar qual lado do dominó deve
+     * ser conectado à placa.
+     * @param addDom o dominó a ser adicionado ao quadro.
+     * @param side1 true se side1 do dominó adicionado for o lado
+     * que corresponde à placa.
      */
     public void addDominoBot(Domino addedDom, boolean side1) {
 
-        /* Add to the end of the list */
+        /* Adiciona ao final da lista */
         dominos.add(addedDom);
 
-        /* If side1 is true, that means side1 is the one that matched,
-         * therefore, side2 becomes the next available side on the board. */
+        /* Se side1 for verdadeiro, isso significa que side1 é aquele que correspondeu,
+         * portanto, lado2 se torna o próximo lado disponível no tabuleiro. */
         if (side1) {
             botSide = addedDom.getSide2();
         } else {
 
-            /* Have to flip the domino b/c you're adding side2 to the bot */
+            /* Tem que virar o dominó b/c você está adicionando side2 ao bot */
             addedDom.flipDom();
             botSide = addedDom.getSide1();
         }
@@ -142,33 +140,31 @@ public class Board {
     }
 
     /**
-     * Determines if a specific domino is on the board.
-     *
-     * @param dom the domino to be checked.
-     * @return true if the domino is on the board.
+     * Determina se um dominó específico está no tabuleiro.
+     * @param dom o dominó a ser verificado.
+     * @return true se o dominó estiver no tabuleiro.
      */
     public boolean dominoOnBoard(Domino dom) {
         return dominos.contains(dom);
     }
 
     /**
-     * Returns the number of dominos on the board that match a specific type.
+     * Retorna o número de dominós no tabuleiro que correspondem a um tipo específico.
      * <p>
-     * Eg. Can be used to determine how many '2's  are on the board.
-     *
-     * @param type the number of the domino. Eg. [5|4] is either a '4' domino or a '5' domino.
-     * @return an integer that tells how many dominos of that type are on the board.
+     * Por exemplo. Pode ser usado para determinar quantos '2's estão no tabuleiro.
+     * @param digite o número do dominó. Por exemplo. [5|4] é um dominó '4' ou um dominó '5'.
+     * @return um inteiro que informa quantos dominós desse tipo estão no tabuleiro.
      */
     public int numOfType(int type) {
 
-        /* Counter to keep track of how many dominos match the type */
+        /* Contador para acompanhar quantos dominós correspondem ao tipo */
         int numOfType = 0;
 
-        /* Check every domino on the board */
+        /* Verifica todos os dominós do tabuleiro */
         for (Domino dom : dominos) {
 
-            /* If either side of the domino on the board is equal
-             * to the type, then increment the type counter */
+            /* Se um dos lados do dominó no tabuleiro for igual
+             * para o tipo e, em seguida, incremente o contador de tipos */
             if ((dom.getSide1() == type) || (dom.getSide2() == type)) {
                 numOfType++;
             }
@@ -180,11 +176,11 @@ public class Board {
     }
 
     /**
-     * Prints the board vertically in a text format.
+     * Imprime o quadro verticalmente em formato de texto.
      */
     public void printBoardVert() {
 
-        /* Print all the dominos on the board */
+        /* Imprime todos os dominós no tabuleiro */
         for (Domino dom : dominos) {
             dom.printVertical();
         }
@@ -193,11 +189,11 @@ public class Board {
     }
 
     /**
-     * Prints the board horizontally in a text format.
+     * Imprime o quadro horizontalmente em formato de texto.
      */
     public void printBoardHorz() {
 
-        /* Print all the dominos on the board */
+        /* Imprime todos os dominós no tabuleiro */
         for (Domino dom : dominos) {
             dom.printHorizontal();
         }

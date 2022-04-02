@@ -1,15 +1,19 @@
 package br.edu.univas.vo;
 
+/**
+ * Uma classe usada para representar um único dominó.
+ */
+
 public class Domino implements Comparable<Domino> {
 
-    /* Fields used to represent the sides of a domino.
-     * A domino has two sides associated with it. */
+    /* Campos usados ​​para representar os lados de um dominó.
+     * Um dominó tem dois lados associados a ele. */
     private int side1, side2;
     private boolean flipped;
 
     /**
-     * Constructor that makes a new "double blank" domino.
-     * I.e. a domino whose both sides are 0.
+     * Construtor que faz um novo dominó "duplo em branco".
+     * Ou seja, um dominó cujos dois lados são 0.
      */
     public Domino() {
         this.side1 = 0;
@@ -18,8 +22,9 @@ public class Domino implements Comparable<Domino> {
     }
 
     /**
-     * @param side1 the integer used represent the 1st side of the domino.
-     * @param side2 the integer used represent the 2nd side of the domino.
+     *
+     * @param side1 o inteiro usado representa o 1º lado do dominó.
+     * @param side2 o inteiro usado representa o 2º lado do dominó.
      */
     public Domino(int side1, int side2) {
         this.side1 = side1;
@@ -27,60 +32,55 @@ public class Domino implements Comparable<Domino> {
         this.flipped = false;
     }
 
-    /* Getters for the Domino */
+    /* Getters para o Domino */
 
     /**
-     * Get's the number associated with the 1st side of the domino.
-     *
-     * @return the number value for the 1st side of the domino.
+     * Get é o número associado ao 1º lado do dominó.
+     * @return o valor numérico do 1º lado do dominó.
      */
     public int getSide1() {
         return side1;
     }
 
     /**
-     * Get's the number associated with the 2nd side of the domino.
-     *
-     * @return the number value for the 2nd side of the domino.
+     * Get é o número associado ao 2º lado do dominó.
+     * @return o valor numérico do 2º lado do dominó.
      */
     public int getSide2() {
         return side2;
     }
 
     /**
-     * Determines if the domino is/was flipped.
-     *
-     * @return true if the domino is flipped.
+     * Determina se o dominó está/foi virado.
+     * @return true se o dominó for invertido.
      */
     public boolean isFlip() {
         return flipped;
     }
 
     /**
-     * Flips the domino's state.
+     * Inverte o estado do dominó.
      */
     public void flipDom() {
 
-        /* Change the flip state of the domino */
+        /* Muda o estado de inversão do dominó */
         flipped = !flipped;
     }
 
     /**
-     * Gets the total value of the domino.
+     * Obtém o valor total do dominó.
      * <p>
-     * The total value for a domino is the sum of both its sides.
-     *
-     * @return The total value of the domino.
+     * O valor total de um dominó é a soma de ambos os lados.
+     * @return O valor total do dominó.
      */
     public int getTotalValue() {
         return side1 + side2;
     }
 
     /**
-     * Determines if two dominos have the same total value.
-     *
-     * @param compDomino the domino you want to compare with.
-     * @return true if the two dominos have the same total value.
+     * Determina se dois dominós têm o mesmo valor total.
+     * @param compDomino o dominó com o qual você deseja comparar.
+     * @return true se os dois dominós tiverem o mesmo valor total.
      */
     public boolean isSameValue(Domino compDomino) {
 
@@ -89,20 +89,18 @@ public class Domino implements Comparable<Domino> {
     }
 
     /**
-     * Determines if the domino is a double domino.
+     * Determina se o dominó é um dominó duplo.
      * <p>
-     * A double domino is a domino whose both sides have the same value. E.g. 6 | 6.
-     *
-     * @return true if the domino is a double domino.
+     * Um dominó duplo é um dominó cujos dois lados têm o mesmo valor. Exemplo: 6 | 6.
+     * @return true se o dominó for um dominó duplo.
      */
     public boolean isDouble() {
         return side1 == side2;
     }
 
     /**
-     * Prints a vertical text representation of the domino.
-     *
-     * @param true, if the domino should be printed reversed.
+     * Imprime uma representação de texto vertical do dominó.
+     * @param true, se o dominó deve ser impresso invertido.
      */
     public void printVertical() {
 
@@ -127,9 +125,8 @@ public class Domino implements Comparable<Domino> {
     }
 
     /**
-     * Prints a horizonal text representation of the domino.
-     *
-     * @param true, if the domino should be printed reversed.
+     * Imprime uma representação de texto horizontal do dominó.
+     * @param true, se o dominó deve ser impresso invertido.
      */
     public void printHorizontal() {
 

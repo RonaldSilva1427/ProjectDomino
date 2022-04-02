@@ -3,24 +3,28 @@ package br.edu.univas.vo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Uma classe usada para representar um pacote de dominós
+ */
+
 public class Pack {
 
 
-    /* List used to hold the all the dominoes in the pack */
+    /* Lista usada para guardar todos os dominós do pacote */
     private List<Domino> pack;
-    private int originalSize; // the original size of the pack.
+    private int originalSize; // o tamanho original do pacote.
 
     /**
-     * Default constructor that creates a pack with 28 dominoes.
+     * Construtor padrão que cria um pacote com 28 dominós.
      * <p>
-     * Note, a standard pack starts with 0 | 0, and goes to 6 | 6.
+     * Observe que um pacote padrão começa com 0 | 0, e vai para 6 | 6.
      */
     public Pack() {
 
-        /* Create a empty list for the domino pack */
+        /* Cria uma lista vazia para o pacote de dominó */
         pack = new ArrayList<Domino>();
 
-        /* 2-D Loop that creates the 28 dominoes */
+        /* Loop 2-D que cria os 28 dominós */
         for (int i = 0; i <= 6; i++) {
 
             for (int k = i; k <= 6; k++) {
@@ -36,19 +40,18 @@ public class Pack {
     }
 
     /**
-     * Creates a pack with a specified number of dominos.
+     * Cria um pacote com um número especificado de dominós.
      * <p>
-     * Note, a standard pack starts with 0 | 0, and goes to 6 | 6.
-     *
-     * @param highestCard an integer which represents the highest card in the pack.
-     *                    I.e. a 9 would mean that the pack starts at 0 | 0 and ends at 9 | 9.
+     * Observe que um pacote padrão começa com 0 | 0, e vai para 6 | 6.
+     * @param highCard um número inteiro que representa a carta mais alta do baralho.
+     * Ou seja, um 9 significaria que o pacote começa em 0 | 0 e termina em 9 | 9.
      */
     public Pack(int highestCard) {
 
-        /* Create a empty list for the domino pack */
+        /* Cria uma lista vazia para o pacote de dominó */
         pack = new ArrayList<Domino>();
 
-        /* 2-D Loop that creates the 28 dominoes */
+        /* Loop 2-D que cria os 28 dominós */
         for (int i = 0; i <= highestCard; i++) {
             for (int k = i; k <= highestCard; k++) {
                 Domino newDom = new Domino(i, k);
@@ -60,52 +63,49 @@ public class Pack {
     }
 
     /**
-     * Used to get all the dominoes that are currently in the pack.
-     *
-     * @return the a list that contains all the dominoes that are in the pack.
+     * Usado para obter todos os dominós que estão atualmente no pacote.
+     * @return a uma lista que contém todos os dominós que estão no pacote.
      */
     public List<Domino> getDominos() {
         return pack;
     }
 
     /**
-     * Used to shuffle the pack of dominoes.
+     * Usado para embaralhar o pacote de dominós.
      */
     public void shuffle() {
         Collections.shuffle(pack);
     }
 
     /**
-     * Returns the number of dominoes that are currently in the pack.
-     *
-     * @return the size current number of dominoes in the pack.
+     * Retorna o número de dominós que estão atualmente no pacote.
+     * @return o tamanho atual do número de dominós no pacote.
      */
     public int packSize() {
         return pack.size();
     }
 
     /**
-     * Returns the number of dominoes that were in the pack.
-     *
-     * @return the original size of domino's pack.
+     * Retorna o número de dominós que estavam no pacote.
+     * @return o tamanho original do pacote de dominó.
      */
     public int orgPackSize() {
         return originalSize;
     }
 
+
     /**
-     * Removes a given number of dominoes from the pack, and put places it
-     * into a specific player's hand.
-     *
-     * @param player   the player to whom the dominoes should be dealt to.
-     * @param numDealt the number of dominoes to be dealt.
+     * Remove um determinado número de dominós do pacote e coloca-o
+     * na mão de um jogador específico.
+     * @param player o jogador para quem os dominós devem ser distribuídos.
+     * @param numDealt o número de dominós a serem distribuídos.
      */
     public void dealHand(Player player, int numDealt) {
 
         for (int i = 0; i < numDealt; i++) {
 
-            /* Take the first domino from the pack,
-             * and put it in the given player's hand.*/
+            /* Pegue o primeiro dominó do pacote,
+             * e coloque-o na mão do jogador indicado.*/
             player.addDomino(pack.remove(0));
 
         }

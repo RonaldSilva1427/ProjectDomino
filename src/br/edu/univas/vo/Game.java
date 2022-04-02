@@ -3,21 +3,25 @@ package br.edu.univas.vo;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Aula usada para jogar dominó.
+ */
+
+
 public class Game {
 
-    private int numOfPlayers; // Number of players
-    private int packType; // Max domino in the pack. i.e. 6 | 6 or 9 | 9. etc.
-    private IDomInterface iFace; // The interface for the game.
-    private List<Player> playerList; // List of the players in the game
+    private int numOfPlayers; // Número de jogadores
+    private int packType; // Máximo de dominó no pacote. ou seja, 6 | 6 ou 9 | 9. etc.
+    private IDomInterface iFace; // A interface do jogo.
+    private List<Player> playerList; // Lista dos jogadores no jogo
 
     /**
-     * Makes a game with 0 players, and no
-     * prescribed pack.
+     * Faz um jogo com 0 jogadores, e não
+     * pacote prescrito.
      * <p>
-     * The client must provide the game with an IDomInterface object,
-     * in order for the game be made.
-     *
-     * @param iFace the interface for the game. i.e. Text Interface, GUI, etc.
+     * O cliente deve fornecer ao jogo um objeto IDomInterface,
+     * para que o jogo seja feito.
+     * @param iFace a interface do jogo. ou seja, Interface de Texto, GUI, etc.
      */
     public Game(IDomInterface iFace) {
         this.numOfPlayers = 0;
@@ -27,37 +31,37 @@ public class Game {
     }
 
     /**
-     * The "main" method that plays/runs the game.
+     * O método "principal" que joga/executa o jogo.
      */
     public void play() {
 
-        /*What domino pack should be created? 6 or 9?*/
+        /*Qual pacote de dominó deve ser criado? 6 ou 9?*/
         packType = iFace.packSize();
 
-        /*Prompt for number of players*/
+        /*Solicita o número de jogadores*/
         numOfPlayers = iFace.numPlayers();
 
-        /* Loop to get each players name */
+        /* Loop para obter o nome de cada jogador */
         for (int i = 1; i <= numOfPlayers; i++) {
 
-            String name = iFace.playerName(); // Ask for the player's name.
-            playerList.add(new Player(name)); // Add the player to the list.
+            String name = iFace.playerName(); // Peça o nome do jogador.
+            playerList.add(new Player(name)); // Adiciona o jogador à lista.
 
         }
 
-        /* Make a new empty board */
+        /* Faz um novo tabuleiro vazio */
         Board newBoard = new Board();
 
-        /* Make a new pack, based on the type the user selected */
+        /* Faz um novo pacote, baseado no tipo que o usuário selecionou */
         Pack newPack = new Pack(packType);
 
-        /* Shuffle the pack */
+        /* Embaralha o pacote */
         newPack.shuffle();
 
-        /* Deal the dominos to each player in the game */
+        /* Distribuir os dominós para cada jogador do jogo */
         for (Player player : playerList) {
-            newPack.dealHand(player, 7); // deals 7 dominos into the player's hand.
-            iFace.handDealt(player); // tells the player their hand was dealt.
+            newPack.dealHand(player, 7); // distribui 7 dominós na mão do jogador.
+            iFace.handDealt(player); // diz ao jogador que sua mão foi distribuída.
         }
 
     }
