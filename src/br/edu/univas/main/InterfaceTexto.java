@@ -3,10 +3,8 @@ package br.edu.univas.main;
 import br.edu.univas.vo.Player;
 import java.util.Scanner;
 
-/**
- * Uma interface de texto que é usada para jogar um jogo de dominó.
- * Observe que ele implementa o IDomInterface.
- */
+//Uma interface de texto que é usada para jogar um jogo de dominó.
+//Observe que ele implementa o IDomInterface.
 
 public class InterfaceTexto {
 
@@ -15,7 +13,7 @@ public class InterfaceTexto {
     /**
      * Construtor padrão
      */
-    public TextInterface(){
+    public InterfaceTexto() {
         this.input = new Scanner(System.in);
     }
 

@@ -5,7 +5,6 @@ package br.edu.univas.vo;
  * que são desenvolvidos neste projeto.
  * <p>
  * Cada método é responsável por realizar testes em uma classe específica desenvolvida.
- *
  */
 
 public class Tester {
@@ -16,6 +15,7 @@ public class Tester {
 
     /**
      * Este método é usado para testar a Classe Domino.
+     *
      * @ver Dominó
      */
     @SuppressWarnings("unused")
@@ -68,6 +68,7 @@ public class Tester {
 
     /**
      * Este método é usado para testar a Classe do Jogador.
+     *
      * @ver Jogador
      */
     @SuppressWarnings("unused")
@@ -162,6 +163,7 @@ public class Tester {
 
     /**
      * Testador para a classe Pack
+     *
      * @ver Pacote
      */
     @SuppressWarnings("unused")
@@ -398,4 +400,4 @@ public class Tester {
 
 }
 
-}
+

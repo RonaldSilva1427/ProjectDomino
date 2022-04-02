@@ -4,10 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-/**
- * Classe utilizada para representar o tabuleiro em que os dominós são colocados.
- */
-
 public class Board {
     private List<Domino> dominos;  // O tabuleiro contém um conjunto de dominós
     private int topSide, botSide;  // O tabuleiro tem dois lados jogáveis
@@ -24,6 +20,7 @@ public class Board {
 
     /**
      * Obtém a lista de todos os dominós no tabuleiro.
+     *
      * @return uma lista de todos os dominós no tabuleiro.
      */
     public List<Domino> getDominos() {
@@ -37,6 +34,7 @@ public class Board {
      * seria 6.
      * <p>
      * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     *
      * @return o número do lado superior.
      */
     public int getTopSide() {
@@ -56,6 +54,7 @@ public class Board {
      * seria 4.
      * <p>
      * NB Um tabuleiro vazio retornará valores negativos para os lados superior e inferior.
+     *
      * @return o número do lado do bot.
      */
     public int getBotSide() {
@@ -70,6 +69,7 @@ public class Board {
 
     /**
      * Determina se o tabuleiro está vazio ou não.
+     *
      * @return true se o quadro estiver vazio.
      */
     public boolean isEmpty() {
@@ -79,6 +79,7 @@ public class Board {
 
     /**
      * Retorna o número de dominós atualmente no tabuleiro.
+     *
      * @return o número de dominós atualmente no tabuleiro.
      */
     public int numDomBoard() {
@@ -90,9 +91,10 @@ public class Board {
      * <p>
      * O usuário deste método deve especificar qual lado do dominó deve
      * ser conectado à placa.
+     *
      * @param addDom o dominó a ser adicionado ao quadro.
-     * @param side1 true se side1 do dominó adicionado for o lado
-     * que corresponde à placa.
+     * @param side1  true se side1 do dominó adicionado for o lado
+     *               que corresponde à placa.
      */
     public void addDominoTop(Domino addedDom, boolean side1) {
 
@@ -117,9 +119,10 @@ public class Board {
      * <p>
      * O usuário deste método deve especificar qual lado do dominó deve
      * ser conectado à placa.
+     *
      * @param addDom o dominó a ser adicionado ao quadro.
-     * @param side1 true se side1 do dominó adicionado for o lado
-     * que corresponde à placa.
+     * @param side1  true se side1 do dominó adicionado for o lado
+     *               que corresponde à placa.
      */
     public void addDominoBot(Domino addedDom, boolean side1) {
 
@@ -141,6 +144,7 @@ public class Board {
 
     /**
      * Determina se um dominó específico está no tabuleiro.
+     *
      * @param dom o dominó a ser verificado.
      * @return true se o dominó estiver no tabuleiro.
      */
@@ -152,6 +156,7 @@ public class Board {
      * Retorna o número de dominós no tabuleiro que correspondem a um tipo específico.
      * <p>
      * Por exemplo. Pode ser usado para determinar quantos '2's estão no tabuleiro.
+     *
      * @param digite o número do dominó. Por exemplo. [5|4] é um dominó '4' ou um dominó '5'.
      * @return um inteiro que informa quantos dominós desse tipo estão no tabuleiro.
      */
@@ -203,14 +208,10 @@ public class Board {
 
     @Override
     public String toString() {
-        return "Num of dominos on the board " + numDomBoard() +
-                "\nPlayable Top Side: " + topSide +
-                "\nPlayable Bot Side: " + botSide;
+        return "Num of dominos on the board " + numDomBoard() + "\nPlayable Top Side: " + topSide + "\nPlayable Bot Side: " + botSide;
     }
 
 
 }
 
 
-
-}

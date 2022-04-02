@@ -22,7 +22,6 @@ public class Domino implements Comparable<Domino> {
     }
 
     /**
-     *
      * @param side1 o inteiro usado representa o 1º lado do dominó.
      * @param side2 o inteiro usado representa o 2º lado do dominó.
      */
@@ -36,6 +35,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Get é o número associado ao 1º lado do dominó.
+     *
      * @return o valor numérico do 1º lado do dominó.
      */
     public int getSide1() {
@@ -44,6 +44,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Get é o número associado ao 2º lado do dominó.
+     *
      * @return o valor numérico do 2º lado do dominó.
      */
     public int getSide2() {
@@ -52,6 +53,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Determina se o dominó está/foi virado.
+     *
      * @return true se o dominó for invertido.
      */
     public boolean isFlip() {
@@ -71,6 +73,7 @@ public class Domino implements Comparable<Domino> {
      * Obtém o valor total do dominó.
      * <p>
      * O valor total de um dominó é a soma de ambos os lados.
+     *
      * @return O valor total do dominó.
      */
     public int getTotalValue() {
@@ -79,6 +82,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Determina se dois dominós têm o mesmo valor total.
+     *
      * @param compDomino o dominó com o qual você deseja comparar.
      * @return true se os dois dominós tiverem o mesmo valor total.
      */
@@ -92,6 +96,7 @@ public class Domino implements Comparable<Domino> {
      * Determina se o dominó é um dominó duplo.
      * <p>
      * Um dominó duplo é um dominó cujos dois lados têm o mesmo valor. Exemplo: 6 | 6.
+     *
      * @return true se o dominó for um dominó duplo.
      */
     public boolean isDouble() {
@@ -100,6 +105,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Imprime uma representação de texto vertical do dominó.
+     *
      * @param true, se o dominó deve ser impresso invertido.
      */
     public void printVertical() {
@@ -126,6 +132,7 @@ public class Domino implements Comparable<Domino> {
 
     /**
      * Imprime uma representação de texto horizontal do dominó.
+     *
      * @param true, se o dominó deve ser impresso invertido.
      */
     public void printHorizontal() {
@@ -140,17 +147,12 @@ public class Domino implements Comparable<Domino> {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (getClass() != obj.getClass()) return false;
         Domino other = (Domino) obj;
-        if (side1 != other.side1)
-            return false;
-        if (side2 != other.side2)
-            return false;
+        if (side1 != other.side1) return false;
+        if (side2 != other.side2) return false;
         return true;
     }
 

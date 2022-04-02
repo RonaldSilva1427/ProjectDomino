@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  * A classe é usada para representar um jogador de dominó.
- *
  */
 
 
@@ -21,6 +20,7 @@ public class Player {
      * Cria um novo jogador com um determinado nome.
      * <p>
      * O jogador receberá o próximo número de identificação disponível.
+     *
      * @param name o nome do jogador.
      */
     public Player(String name) {
@@ -39,6 +39,7 @@ public class Player {
 
     /**
      * Obtém o número de jogadores atuais no jogo.
+     *
      * @return o número atual de jogadores no jogo.
      */
     public static int getNumOfPlayers() {
@@ -47,6 +48,7 @@ public class Player {
 
     /**
      * Retorna o nome do jogador.
+     *
      * @return o nome do jogador.
      */
     public String getName() {
@@ -55,6 +57,7 @@ public class Player {
 
     /**
      * Retorna o ID do jogador.
+     *
      * @return o ID do jogador.
      */
     public int getId() {
@@ -63,6 +66,7 @@ public class Player {
 
     /**
      * Retorna a lista de dominós na mão do jogador.
+     *
      * @return os dominós na mão deste jogador.
      */
     public List<Domino> getHand() {
@@ -73,6 +77,7 @@ public class Player {
 
     /**
      * Obtém o número de dominós na mão de um jogador.
+     *
      * @return o número de dominós na mão do jogador
      */
     public int numOfDomInHand() {
@@ -81,6 +86,7 @@ public class Player {
 
     /**
      * Determina se a mão de um jogador está vazia.
+     *
      * @return true se o jogador não tiver mais dominós na mão.
      */
     public boolean isHandEmpty() {
@@ -89,6 +95,7 @@ public class Player {
 
     /**
      * Adiciona um dominó à mão do jogador.
+     *
      * @param domino o dominó a ser adicionado à mão do jogador.
      */
     public void addDomino(Domino domino) {
@@ -97,6 +104,7 @@ public class Player {
 
     /**
      * Remove um dominó da mão do jogador. Ele retorna o dominó removido.
+     *
      * @param indexa a posição do índice do dominó na mão a ser retornada.
      * @return o dominó que é removido da mão.
      */
@@ -115,6 +123,7 @@ public class Player {
 
     /**
      * Determina se um jogador tem um dominó específico em sua mão.
+     *
      * @param domino o dominó a ser verificado.
      * @return true se o jogador tiver aquele dominó específico.
      */
@@ -125,6 +134,7 @@ public class Player {
     /**
      * Determine se o jogador tem um dominó na mão que
      * pode ser jogado no tabuleiro.
+     *
      * @param o lado do dominó no tabuleiro a ser verificado.
      * @return true se o jogador tiver um dominó jogável.
      */
@@ -139,13 +149,14 @@ public class Player {
 
         }
 
-       /* Checou a mão inteira, não havia correspondências */
+        /* Checou a mão inteira, não havia correspondências */
         return false;
 
     }
 
     /**
      * Retorna o valor total de todos os dominós na mão do jogador.
+     *
      * @return o valor total de todos os dominós na mão do jogador.
      */
     public int valueOfHand() {
@@ -171,4 +182,4 @@ public class Player {
 
 }
 
-}
+

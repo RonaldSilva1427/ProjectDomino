@@ -1,5 +1,7 @@
 package br.edu.univas.vo;
 
+import br.edu.univas.main.InterfaceDados;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class Game {
 
     private int numOfPlayers; // Número de jogadores
     private int packType; // Máximo de dominó no pacote. ou seja, 6 | 6 ou 9 | 9. etc.
-    private IDomInterface iFace; // A interface do jogo.
+    private InterfaceDados iFace; // A ‘interface’ do jogo.
     private List<Player> playerList; // Lista dos jogadores no jogo
 
     /**
@@ -21,9 +23,10 @@ public class Game {
      * <p>
      * O cliente deve fornecer ao jogo um objeto IDomInterface,
      * para que o jogo seja feito.
-     * @param iFace a interface do jogo. ou seja, Interface de Texto, GUI, etc.
+     *
+     * @param iFace A interface do jogo. ou seja, Interface de Texto, GUI, etc.
      */
-    public Game(IDomInterface iFace) {
+    public Game(InterfaceDados iFace) {
         this.numOfPlayers = 0;
         this.packType = 0;
         this.iFace = iFace;
