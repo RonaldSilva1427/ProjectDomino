@@ -1,12 +1,13 @@
 package br.edu.univas.main;
 
 import br.edu.univas.vo.Player;
+
 import java.util.Scanner;
 
 //Uma interface de texto que é usada para jogar um jogo de dominó.
 //Observe que ele implementa o IDomInterface.
 
-public class InterfaceTexto {
+public class InterfaceTexto implements InterfaceDados {
 
     private Scanner input; // Usado para obter entrada do usuário.
 
@@ -38,7 +39,7 @@ public class InterfaceTexto {
 
     @Override
     public void handDealt(Player player) {
-        System.out.printf("A mão de %s foi distribuída.\n", player.getName());
+        System.out.printf("%s 's hand was dealt.\n", player.getName());
     }
 
 }

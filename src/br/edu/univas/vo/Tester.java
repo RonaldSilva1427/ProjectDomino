@@ -1,5 +1,7 @@
 package br.edu.univas.vo;
 
+import java.util.Iterator;
+
 /**
  * Esta classe serve como estrutura de teste para as classes
  * que são desenvolvidos neste projeto.

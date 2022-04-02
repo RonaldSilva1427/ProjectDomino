@@ -1,6 +1,7 @@
 package br.edu.univas.vo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
