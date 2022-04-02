@@ -1,0 +1,65 @@
+package br.edu.univas.vo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Game {
+
+    private int numOfPlayers; // Number of players
+    private int packType; // Max domino in the pack. i.e. 6 | 6 or 9 | 9. etc.
+    private IDomInterface iFace; // The interface for the game.
+    private List<Player> playerList; // List of the players in the game
+
+    /**
+     * Makes a game with 0 players, and no
+     * prescribed pack.
+     * <p>
+     * The client must provide the game with an IDomInterface object,
+     * in order for the game be made.
+     *
+     * @param iFace the interface for the game. i.e. Text Interface, GUI, etc.
+     */
+    public Game(IDomInterface iFace) {
+        this.numOfPlayers = 0;
+        this.packType = 0;
+        this.iFace = iFace;
+        this.playerList = new ArrayList<Player>();
+    }
+
+    /**
+     * The "main" method that plays/runs the game.
+     */
+    public void play() {
+
+        /*What domino pack should be created? 6 or 9?*/
+        packType = iFace.packSize();
+
+        /*Prompt for number of players*/
+        numOfPlayers = iFace.numPlayers();
+
+        /* Loop to get each players name */
+        for (int i = 1; i <= numOfPlayers; i++) {
+
+            String name = iFace.playerName(); // Ask for the player's name.
+            playerList.add(new Player(name)); // Add the player to the list.
+
+        }
+
+        /* Make a new empty board */
+        Board newBoard = new Board();
+
+        /* Make a new pack, based on the type the user selected */
+        Pack newPack = new Pack(packType);
+
+        /* Shuffle the pack */
+        newPack.shuffle();
+
+        /* Deal the dominos to each player in the game */
+        for (Player player : playerList) {
+            newPack.dealHand(player, 7); // deals 7 dominos into the player's hand.
+            iFace.handDealt(player); // tells the player their hand was dealt.
+        }
+
+    }
+
+}
