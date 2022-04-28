@@ -1,26 +1,27 @@
 package br.edu.univas.vo;
-
 public class View {
 
     public void Start() {
 
         System.out.println("___________________________________________________");
-        System.out.println("Dominó");
+        System.out.println("                    Domino                         ");
         System.out.println("___________________________________________________");
 
     }
 
     public void Playing() {
 
-        System.out.println("\nSua vez **********************\n");
-        System.out.println("Sua mão:");
-        System.out.println("Digite o numéro da peça que deseja jogar ou 15 para passar a vez ou 20 para comprar uma Peça ");
+        System.out.println("\n********** Sua vez **********\n");
+        System.out.println("               Sua mao:                   ");
+        System.out.println("Digite o numero da pecas que deseja jogar!");
+        System.out.println ("15 para passar a vez!");
+        System.out.println ("20 para comprar uma peca!");
         System.out.println("");
     }
 
     public void msgErro() {
 
-        System.out.println("Numero de Peça inválida, digite um numero válido");
+        System.out.println("Numero de Peca invalida, digite um numero valido");
 
     }
 
@@ -29,26 +30,26 @@ public class View {
     }
 
     public void msgPecasJogadas() {
-        System.out.println("Peças na mesa:\n ");
+        System.out.println("Pecas na mesa:\n ");
 
     }
     public void msgGanhou() {
 
-        System.out.println("Você venceu!!!");
+        System.out.println("********** Voce venceu!!! **********");
     }
     public void msgPerdeu() {
-        System.out.println("Você perdeu");
+        System.out.println("********** Voce perdeu **********");
 
     }
 
     public void msgComputadorPassouAVez() {
 
-        System.out.println("Computador passou a vez *******************");
+        System.out.println("********** Computador passou a vez! **********");
 
     }
     public void msgComputadorComprouPeca() {
 
-        System.out.println("Computador comprou uma peça **********************\n");
+        System.out.println("********** Computador comprou uma peca! **********");
     }
 
 }

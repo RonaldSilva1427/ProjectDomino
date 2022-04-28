@@ -19,6 +19,7 @@ public class StartApp {
         PecaList pecasPlayer1 = new PecaList();
         PecaList pecasJogadas = new PecaList();
 
+
         pecas.criaPecas();
 
         pecas.distribuiPecas(pecasPlayer1, pecas);
@@ -191,8 +192,3 @@ public class StartApp {
 
 }
 
-
-
-
-    }
-}
